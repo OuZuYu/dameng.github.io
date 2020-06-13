@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Dashboard from '../views/dm-dashboard'
 
 Vue.use(VueRouter)
 
@@ -8,7 +8,13 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    redirect: 'dashboard',
+    children: [
+      {
+        path: '/dashboard',
+        component: () => import('@/views/dm-dashboard')
+      }
+    ]
   },
   // {
   //   path: '/about',
