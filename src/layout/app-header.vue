@@ -8,7 +8,7 @@
     <el-input
       class="header-input"
       placeholder="search..."
-      v-model="input"
+      v-model="keyword"
       clearable>
       <el-button slot="append" icon="el-icon-search"></el-button>
     </el-input>
@@ -21,6 +21,12 @@ import Navbar from './nav-bar'
 export default {
   components: {
     Navbar
+  },
+
+  data() {
+    return {
+      keyword: ''
+    }
   }
 }
 </script>
