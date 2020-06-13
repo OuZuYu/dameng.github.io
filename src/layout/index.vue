@@ -28,12 +28,18 @@ export default {
 <style scoped lang="less">
 .dm-app {
   display: flex;
+
   .app-left {
     flex: 1;
+    background: #f9f9f9;
+    padding: 6px 20px;
   }
 
   .app-right {
     flex: 0 0 500px;
+    border: 1px solid #dadada;
+    border-radius: 26px 0 0 26px;
+    box-shadow: 1px 7px 8px 8px #e2e2e2;
   }
 }
 </style>
