@@ -1,9 +1,6 @@
 <template>
   <div class="dm-cards">
-    <div class="cards-header">
-      <h3>Cards</h3>
-      <span>View all cards</span>
-    </div>
+    <block-header block-title="Cards"></block-header>
 
     <div class="cards-wrap">
       <div class="card-item" v-for="card in cards" :key="card.id" :style="{background: createColor()}">
@@ -23,7 +20,13 @@
 </template>
 
 <script>
+import BlockHeader from '@/components/block-header'
+
 export default {
+  components: {
+    BlockHeader
+  },
+
   data() {
     return {
       // 本来想用 mock，结果 easy-mock 进不去
@@ -58,9 +61,9 @@ export default {
 
   methods: {
     createColor() {
-      const r = Math.floor(Math.random()*255)
-      const g = Math.floor(Math.random()*255)
-      const b = Math.floor(Math.random()*255)
+      const r = Math.floor(Math.random() * 255)
+      const g = Math.floor(Math.random() * 255)
+      const b = Math.floor(Math.random() * 255)
 
       return 'rgba('+ r +','+ g +','+ b +',0.8)'
     }
@@ -70,19 +73,14 @@ export default {
 
 <style scoped lang="less">
 .dm-cards {
-  .cards-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .cards-wrap {
     display: flex;
+    flex-wrap: wrap;
 
     .card-item {
-      width: 33.333%;
+      width: 29%;
       height: 200px;
-      margin-right: 10px;
+      margin: 0 10px 10px 0;
       padding: 20px;
       border-radius: 20px;
       background: #999;
